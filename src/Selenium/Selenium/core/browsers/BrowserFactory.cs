@@ -3,7 +3,6 @@ using System.IO;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Remote;
-using Selenium.config;
 
 namespace Selenium.core.browsers
 {
@@ -15,18 +14,18 @@ namespace Selenium.core.browsers
     {
         IBrowser<ChromeDriver> IBrowserWebDriver<ChromeDriver>.Create()
         {
-            var dirName = AppDomain.CurrentDomain.BaseDirectory;
+            var dirName = AppContext.BaseDirectory;
             var fileInfo = new FileInfo(dirName);
-            var parentDir = fileInfo.Directory?.Parent;
+            var parentDir = fileInfo.Directory?.Parent.Parent;
             var parentDirName = parentDir?.FullName;
             return new BrowserAdapter<ChromeDriver>(new ChromeDriver(parentDirName + @"\libs"), BrowserType.Firefox);
         }
 
         IBrowser<FirefoxDriver> IBrowserWebDriver<FirefoxDriver>.Create()
         {
-            var dirName = AppDomain.CurrentDomain.BaseDirectory;
+            var dirName = AppContext.BaseDirectory;
             var fileInfo = new FileInfo(dirName);
-            var parentDir = fileInfo.Directory?.Parent;
+            var parentDir = fileInfo.Directory?.Parent.Parent;
             var parentDirName = parentDir?.FullName;
             var service = FirefoxDriverService.CreateDefaultService(parentDirName + @"\libs");
             service.FirefoxBinaryPath = @"C:\Program Files (x86)\Mozilla Firefox\firefox.exe";

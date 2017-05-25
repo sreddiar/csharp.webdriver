@@ -5,6 +5,7 @@ using Selenium.pages;
 namespace Selenium.tests
 {
     [TestFixture]
+    [Parallelizable]
     public class GoogleSearch : TestBase
     {
         [Test]

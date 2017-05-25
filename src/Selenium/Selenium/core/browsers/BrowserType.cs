@@ -1,8 +1,5 @@
-﻿using System;
-
-namespace Selenium.core.browsers
+﻿namespace Selenium.core.browsers
 {
-    [Serializable]
     public enum BrowserType
     {
         Firefox,

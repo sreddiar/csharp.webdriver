@@ -18,5 +18,26 @@ namespace Selenium.pages
             _browser.Page.GoToUrl("http://www.google.com");
             return new RegisterPage(_browser);
         }
+
+        public RegisterPage OpenYahooPage()
+        {
+            Console.WriteLine("Navigating to Yahoo page");
+            _browser.Page.GoToUrl("http://www.yahoo.com");
+            return new RegisterPage(_browser);
+        }
+
+        public RegisterPage OpenGooglePage()
+        {
+            Console.WriteLine("Navigating to Google page");
+            _browser.Page.GoToUrl("http://www.google.com");
+            return new RegisterPage(_browser);
+        }
+
+        public RegisterPage OpenGithubPage()
+        {
+            Console.WriteLine("Navigating to Github page");
+            _browser.Page.GoToUrl("http://www.github.com");
+            return new RegisterPage(_browser);
+        }
     }
 }
