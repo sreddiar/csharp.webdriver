@@ -28,7 +28,7 @@ namespace Selenium.core.browsers
             var parentDir = fileInfo.Directory?.Parent.Parent;
             var parentDirName = parentDir?.FullName;
             var service = FirefoxDriverService.CreateDefaultService(parentDirName + @"\libs");
-            service.FirefoxBinaryPath = @"C:\Program Files (x86)\Mozilla Firefox\firefox.exe";
+            service.FirefoxBinaryPath = @"C:\Program Files\Mozilla Firefox\firefox.exe";
             return new BrowserAdapter<FirefoxDriver>(new FirefoxDriver(service), BrowserType.Firefox);
         }
 
